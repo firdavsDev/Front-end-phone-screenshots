@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Script darslari</title>
+    <script src="soloLearn.js"></script>
+</head>
+<body>
+    <h1 class="salom" id="salomlar">Salom JS</h1>
+
+    <!-- barcha p taglarni uzgartirad -->
+    <p>Hi</p>
+    <p>Hello</p>
+    <p>Hi</p>
+
+    <!-- divni bollarini uzgartirish -->
+<div id="demo">
+    <p>salom</p>
+    <p>salom</p>
+</div>
+
+<!-- rasmni uzgartirish -->
+<img src="orange.png" alt="rasm" id="myIMG">
+
+<!-- style uzgartirishiiz mumkin -->
+<div id="text" style="width: 200px;">Text</div>
+
+<!-- tugam oncclikda -->
+<button onclick="show()">Clik ME</button>
+<!-- event listener -->
+<button id='btn'>Math random</button>
+</body>
+<script>
+// js shu yerda yozamiz
+
+//                     DOM
+var arr = document.getElementsByTagName('p');
+for (var x =0;x<arr.length;x++){
+   arr[x].innerHTML = 'Hi there';
+}
+
+//  change divs child
+var a = document.getElementById('demo');
+var arr = a.childNodes;
+for(var x = 0;x<arr.length;x++){
+   arr[x].innerHTML = 'New text';
+}
+
+// change img src
+var el = document.getElementById('myIMG');
+el.src = 'apple.png';
+
+// change style
+var t = document.getElementById('text');
+t.style.color = '6600FF';
+t.style.width = '100px';
+
+// event listener
+window.onload = function(){
+    //take id button
+    var btn = document.getElementById('btn');
+    //clik bulganda
+    btn.addEventListener('click',myFunction);
+
+    function myFunction(){
+        alert(Math.random());
+        // clikni uchiramiz
+        btn.removeEventListener('click',myFunction);
+    }
+};
+
+</script>
+</html>
